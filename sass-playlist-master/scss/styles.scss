@@ -11,6 +11,9 @@
 	li{
 		float: left;
 		width: (100% / 6);
+		@include mQ(600px){
+			width: 100%;
+		}
 	}
 	a{
 		color: $offwhite;
@@ -19,7 +22,7 @@
 		display: block;
 		text-align: center;
 		&:hover{
-			background-color: #333;
+			background-color:lighten($deepblue,5);
 		}
 	}
 }// end #main-nav
@@ -62,10 +65,17 @@ section h1{
 		color: $deepblue;
 		font-weight: bold;
 		&:hover{
-			color: red;
+			color: complement($deepblue);
 		}
 	}
 	ul{
 		@include clearfix;
+	}
+}
+
+#projects li{
+	@include grid(4,2%);
+	img{
+		width: 100%;
 	}
 }
